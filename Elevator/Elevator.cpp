@@ -2,6 +2,7 @@
 using namespace std;
 class Floor {
 	 int SIZE;
+	 bool buttonF;
 public: 
 
 	Floor() : SIZE(0) {
@@ -21,13 +22,19 @@ public:
 		}
 	}
 	void StatusFl() {
-
+		if (buttonF == true) {
+			cout << "Lift working" << endl;
+		}
+		else {
+			cout << "Lift not working" << endl;
+		}
 	}
 };
 class Elevator {
-	char* model;
 	Floor fl;
-public: ;
+	bool buttonE;
+
+public: 
 	  void ActiveEl() {
 	  }
 	  void DeactivateEl() {
