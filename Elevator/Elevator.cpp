@@ -5,7 +5,7 @@ class Floor {
 	 bool buttonF;
 public: 
 
-	Floor() : SIZE(0) {
+	Floor() : SIZE(0), buttonF(false) {
 	}
 	Floor(const int size) : SIZE(size), buttonF(false) {
 
@@ -41,7 +41,7 @@ class Elevator {
 	bool buttonE;
 
 public: 
-	Elevator() : buttonE(false) {}
+	Elevator() : buttonE(false), fl(1) {}
 
 	  void ActiveEl() {
 		  Floor fl;
