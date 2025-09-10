@@ -50,6 +50,10 @@ public:
 		  }
 	  }
 	  void DeactivateEl() {
+		  Floor fl;
+		  if (GetButtonE() == false && fl.GetButtonF() == false) {
+			  cout << "Lift not working" << endl;
+		  }
 	  }
 	  bool GetButtonE() {
 		  return buttonE;
