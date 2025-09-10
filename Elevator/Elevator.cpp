@@ -48,9 +48,6 @@ public:
 		  if (GetButtonE() == true || fl.GetButtonF() == true) {
 			  cout << "Lift working" << endl;	
 		  }
-		  else {
-			  cout << "Lift not working" << endl;
-		  }
 	  }
 	  void DeactivateEl() {
 	  }
