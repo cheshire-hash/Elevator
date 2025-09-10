@@ -7,9 +7,13 @@ public:
 
 	Floor() : SIZE(0) {
 	}
-	Floor(const int size) : SIZE(size) {
+	Floor(const int size) : SIZE(size), buttonF(false) {
 
 	}
+	bool GetButtonF(){
+		return buttonF;
+	}
+
 	void SetRange(int* arr[], int s) {
 		if (s > 0) {
 			SIZE = s;
@@ -17,6 +21,7 @@ public:
 			for (int i = 0; i < SIZE; i++) {
 				
 			}
+	        delete[] arr;
 		
 
 		}
@@ -29,21 +34,32 @@ public:
 			cout << "Lift not working" << endl;
 		}
 	}
+
 };
 class Elevator {
 	Floor fl;
 	bool buttonE;
 
 public: 
+	Elevator() : buttonE(false) {}
+
 	  void ActiveEl() {
+		  Floor fl;
+		  if (GetButtonE() == true || fl.GetButtonF() == true) {
+
+		  }
 	  }
 	  void DeactivateEl() {
 	  }
+	  bool GetButtonE() {
+		  return buttonE;
+	  }	
 	  void CallEl() {
 	  }
 	  void ShowFloor() {
 	  }
 	  void StatusEl() {
+
 	  }
 
 
