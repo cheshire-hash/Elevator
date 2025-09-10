@@ -6,7 +6,7 @@ public:
 	void StatusFl() {
 
 	}
-	int SetRange(int s) : SIZE(s)
+	int SetRange(int s) : SIZE(s) {
 	}
 };
 class Elevator {
