@@ -1,12 +1,27 @@
 #include<iostream>
 using namespace std;
 class Floor {
-	const int SIZE;
+	 int SIZE;
 public: 
-	void StatusFl() {
+
+	Floor() : SIZE(0) {
+	}
+	Floor(const int size) : SIZE(size) {
 
 	}
-	int SetRange(int s) : SIZE(s) {
+	void SetRange(int* arr[], int s) {
+		if (s > 0) {
+			SIZE = s;
+			arr = new int* [SIZE];
+			for (int i = 0; i < SIZE; i++) {
+				
+			}
+		
+
+		}
+	}
+	void StatusFl() {
+
 	}
 };
 class Elevator {
@@ -23,6 +38,7 @@ public: ;
 	  }
 	  void StatusEl() {
 	  }
+
 
 };
 int main() {
