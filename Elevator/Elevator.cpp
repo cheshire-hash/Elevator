@@ -14,14 +14,12 @@ public:
 		return buttonF;
 	}
 
-	void SetRange(int* arr[], int s) {
+	void SetRange(int arr[], int s) {
 		if (s > 0) {
 			SIZE = s;
-			arr = new int* [SIZE];
 			for (int i = 0; i < SIZE; i++) {
 				
 			}
-	        delete[] arr;
 		
 
 		}
