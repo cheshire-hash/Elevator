@@ -1,28 +1,26 @@
 #include<iostream>
 using namespace std;
 class Floor {
-	 int SIZE;
+	 int number;
 	 bool buttonF;
 public: 
 
-	Floor() : SIZE(0), buttonF(false) {
+	Floor() : number(0), buttonF(false) {
 	}
-	Floor(const int size) : SIZE(size), buttonF(false) {
+	Floor(const int n) : number(n), buttonF(false) {
 
+	}
+	int GetNumber() {
+		return number;
+	}
+	void PressButtonF() {
+		buttonF = true;
+	}
+	void UnpressButtonF() {
+		buttonF = false;
 	}
 	bool GetButtonF(){
 		return buttonF;
-	}
-
-	void SetRange(int arr[], int s) {
-		if (s > 0) {
-			SIZE = s;
-			for (int i = 0; i < SIZE; i++) {
-				
-			}
-		
-
-		}
 	}
 	void StatusFl() {
 		if (buttonF == true) {
@@ -35,11 +33,33 @@ public:
 
 };
 class Elevator {
+	int low;
+	int high;
+	int current;
 	Floor fl;
 	bool buttonE;
+	int size;
 
 public: 
-	Elevator() : buttonE(false), fl(1) {}
+	  Elevator() : buttonE(false), fl(1) {}
+
+	  void SetRange(int l, int h) {
+		Floor* fl;
+		if (l > h) swap(l, h);
+		low = l;
+		high = h;
+		size = high - low + 1;
+
+		delete[] fl;
+		fl = new Floor[size]; 
+
+		for (int i = 0; i < size; i++) {
+			fl[i] = Floor(low + i); 
+		}
+
+		current = low; 
+	  }
+
 
 	  void ActiveEl() {
 		  Floor fl;
