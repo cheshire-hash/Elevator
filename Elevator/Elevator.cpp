@@ -82,10 +82,15 @@ public:
 		  cout << "Elevator arrives at floor: " << number << endl;
 	  }
 	  void StatusEl() {
+		  if (buttonE == true) {
+			  cout << "Elevator button is pressed" << endl
+		  }
 		  for (int i = 0; i < size; i++) {
 			  int floorN = fl[i].GetNumber();
 			  if (fl[i].GetButtonF()) {
-				  floorN = current;
+				  if (floorN = current) {
+					  cout << "Lift arrived at floor: " << floorN << endl;
+				  }
 			  }
 		  }
 
