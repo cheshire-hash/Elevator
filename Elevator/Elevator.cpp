@@ -44,7 +44,6 @@ public:
 	  Elevator() : buttonE(false), fl(nullptr) {}
 
 	  void SetRange(int l, int h) {
-		Floor* fl;
 		low = l;
 		high = h;
 		size = high - low + 1;
@@ -61,13 +60,11 @@ public:
 
 
 	  void ActiveEl() {
-		  Floor fl;
-		  if (GetButtonE() == true || fl.GetButtonF() == true) {
+		  if (GetButtonE() == true || fl->GetButtonF() == true) {
 			  cout << "Lift working" << endl;	
 		  }
 	  }
 	  void DeactivateEl() {
-		  Floor* fl;
 		  if (GetButtonE() == false && fl->GetButtonF() == false) {
 			  cout << "Lift not working" << endl;
 		  }
@@ -79,9 +76,18 @@ public:
 		  fl[number - low].PressButtonF();
 
 	  }
-	  void ShowFloor() {
+	  void ShowFloor(int number) {
+		  current = number;
+		  fl[number - low].UnpressButtonF();
+		  cout << "Elevator arrives at floor: " << number << endl;
 	  }
 	  void StatusEl() {
+		  for (int i = 0; i < size; i++) {
+			  int floorN = fl[i].GetNumber();
+			  if (fl[i].GetButtonF()) {
+				  floorN = current;
+			  }
+		  }
 
 	  }
 
