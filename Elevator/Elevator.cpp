@@ -36,16 +36,15 @@ class Elevator {
 	int low;
 	int high;
 	int current;
-	Floor fl;
+	Floor* fl;
 	bool buttonE;
 	int size;
 
 public: 
-	  Elevator() : buttonE(false), fl(1) {}
+	  Elevator() : buttonE(false), fl(nullptr) {}
 
 	  void SetRange(int l, int h) {
 		Floor* fl;
-		if (l > h) swap(l, h);
 		low = l;
 		high = h;
 		size = high - low + 1;
@@ -68,21 +67,24 @@ public:
 		  }
 	  }
 	  void DeactivateEl() {
-		  Floor fl;
-		  if (GetButtonE() == false && fl.GetButtonF() == false) {
+		  Floor* fl;
+		  if (GetButtonE() == false && fl->GetButtonF() == false) {
 			  cout << "Lift not working" << endl;
 		  }
 	  }
 	  bool GetButtonE() {
 		  return buttonE;
 	  }	
-	  void CallEl() {
+	  void CallEl(int number) {
+		  fl[number - low].PressButtonF();
+
 	  }
 	  void ShowFloor() {
 	  }
 	  void StatusEl() {
 
 	  }
+
 
 
 };
