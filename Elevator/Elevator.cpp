@@ -83,13 +83,16 @@ public:
 	  }
 	  void StatusEl() {
 		  if (buttonE == true) {
-			  cout << "Elevator button is pressed" << endl
+			  cout << "Elevator button is pressed" << endl;
 		  }
 		  for (int i = 0; i < size; i++) {
 			  int floorN = fl[i].GetNumber();
 			  if (fl[i].GetButtonF()) {
 				  if (floorN = current) {
 					  cout << "Lift arrived at floor: " << floorN << endl;
+				  }
+				  else {
+					  cout << "Floor: " << floorN << " is waiting for elevator" << endl;
 				  }
 			  }
 		  }
