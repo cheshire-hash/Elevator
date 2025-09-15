@@ -58,13 +58,15 @@
 			current = low; 
 		  }
 		  void ActiveEl() {
-			  if (GetButtonE() == true || fl->GetButtonF() == true) {
-				  cout << "Lift working" << endl;	
+			  if (buttonE == false) {
+				  buttonE = true;
+				  cout << "Elevator is active" << endl;
 			  }
 		  }
 		  void DeactivateEl() {
-			  if (GetButtonE() == false && fl->GetButtonF() == false) {
-				  cout << "Lift not working" << endl;
+			  if (buttonE == true) {
+				  buttonE = false;
+				  cout << "Elevator is deactivate" << endl;
 			  }
 		  }
 		  bool GetButtonE() {
