@@ -57,8 +57,6 @@
 
 			current = low; 
 		  }
-
-
 		  void ActiveEl() {
 			  if (GetButtonE() == true || fl->GetButtonF() == true) {
 				  cout << "Lift working" << endl;	
@@ -100,5 +98,16 @@
 		  }
 	};
 	int main() {
+		Elevator lift;
+		lift.SetRange(1, 5);
+		lift.CallEl(3);
+		lift.StatusEl();
+		lift.ShowFloor(3);
+		lift.StatusEl();
+		lift.CallEl(5);
+		lift.StatusEl();
+		lift.ShowFloor(5);
+		lift.StatusEl();
+
 
 	}
